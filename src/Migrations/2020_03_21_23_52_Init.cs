@@ -40,7 +40,7 @@ namespace Ascalon.ClientService.Migrations.Migrations
                 end_latitude                real                NOT NULL,
                 status                      smallint            NOT NULL,
                 entity                      varchar(100)        NOT NULL,
-                created_at                  date                NOT NULL,
+                created_at                  timestamp           NOT NULL,
                 CONSTRAINT tasks_driver_id_fk FOREIGN KEY (driver_id) REFERENCES users(id)
             );
 
@@ -58,6 +58,7 @@ namespace Ascalon.ClientService.Migrations.Migrations
                
             INSERT INTO roles (name) VALUES ('Logist'),('Driver');
             INSERT INTO users (login, password, role_id, full_name) VALUES ('a.mirko@dostaevsky.ru', '123456', 1, 'Мирко А.А.');
+            INSERT INTO users (login, password, role_id, full_name) VALUES ('test@gmail.com', '654321', 2, 'DriverTest');
             ");
         }
 
