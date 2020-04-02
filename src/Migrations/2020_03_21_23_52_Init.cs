@@ -40,7 +40,7 @@ namespace Ascalon.ClientService.Migrations.Migrations
                 end_latitude                real                NOT NULL,
                 status                      smallint            NOT NULL,
                 entity                      varchar(100)        NOT NULL,
-                created_at                  timestamp           NOT NULL,
+                created_at                  timestamptz         NOT NULL,
                 CONSTRAINT tasks_driver_id_fk FOREIGN KEY (driver_id) REFERENCES users(id)
             );
 
