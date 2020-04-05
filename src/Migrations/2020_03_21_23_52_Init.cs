@@ -41,6 +41,7 @@ namespace Ascalon.ClientService.Migrations.Migrations
                 status                      smallint            NOT NULL,
                 entity                      varchar(100)        NOT NULL,
                 created_at                  timestamptz         NOT NULL,
+                logist_id                   int                 NOT NULL,
                 CONSTRAINT tasks_driver_id_fk FOREIGN KEY (driver_id) REFERENCES users(id)
             );
 
@@ -54,11 +55,12 @@ namespace Ascalon.ClientService.Migrations.Migrations
             COMMENT ON COLUMN tasks.status IS 'Статус задания';
             COMMENT ON COLUMN tasks.entity IS 'Основное задание';
             COMMENT ON COLUMN tasks.created_at IS 'Дата и время создания задания';
+            COMMENT ON COLUMN tasks.logist_id IS 'Идентификатор оператора-логиста';
             
                
             INSERT INTO roles (name) VALUES ('Logist'),('Driver');
             INSERT INTO users (login, password, role_id, full_name) VALUES ('a.mirko@dostaevsky.ru', '123456', 1, 'Мирко А.А.');
-            INSERT INTO users (login, password, role_id, full_name) VALUES ('test@gmail.com', '654321', 2, 'DriverTest');
+            INSERT INTO users (login, password, role_id, full_name, dumper_id) VALUES ('test@gmail.com', '654321', 2, 'DriverTest', 1);
             ");
         }
 
