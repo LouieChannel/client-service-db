@@ -42,7 +42,8 @@ namespace Ascalon.ClientService.Migrations.Migrations
                 entity                      varchar(100)        NOT NULL,
                 created_at                  timestamptz         NOT NULL,
                 logist_id                   int                 NOT NULL,
-                CONSTRAINT tasks_driver_id_fk FOREIGN KEY (driver_id) REFERENCES users(id)
+                CONSTRAINT tasks_driver_id_fk FOREIGN KEY (driver_id) REFERENCES users(id),
+                CONSTRAINT tasks_logist_id_fk FOREIGN KEY (logist_id) REFERENCES users(id)
             );
 
             COMMENT ON TABLE tasks IS 'Список задач';
